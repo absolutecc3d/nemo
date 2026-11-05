@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <title>Nemo — Your AI space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide-static/0.468.0/font/lucide.css">
+</head>
+<body>
+<main class="app-shell">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div><div class="ambient ambient-three"></div>
+  <button class="mobile-scrim" id="scrim" aria-label="Close menu"></button>
+  <aside class="sidebar glass-panel sidebar-expanded" id="sidebar">
+    <div class="side-top">
+      <button class="brand-mark" id="home" aria-label="Nemo home"><span class="nemo-symbol">n</span></button>
+      <button class="icon-button sidebar-toggle" id="sidebarToggle" title="Collapse sidebar">◧</button>
+      <button class="icon-button mobile-close" id="mobileClose" aria-label="Close sidebar">×</button>
+    </div>
+    <button class="new-chat-button" id="newChat"><span>＋</span><span>New chat</span><kbd>⌘ K</kbd></button>
+    <div class="history-section"><div class="section-label">RECENT</div><div class="chat-list" id="chatList"></div></div>
+    <div class="sidebar-bottom"><div class="profile-orb">Y</div><div class="profile-copy"><strong>Your space</strong><span>Personal workspace</span></div><button class="icon-button" title="More options">···</button></div>
+  </aside>
+  <section class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="wordmark">nemo<span class="wordmark-dot">.</span></div>
+      </div>
+      <div class="topbar-right"><button class="top-icon" title="Help">?</button><div class="top-avatar">Y</div></div>
+    </header>
+    <div class="conversation-scroll" id="conversation">
+      <div class="welcome-wrap" id="welcome">
+        <div class="welcome-orbit"><div class="orbit-ring ring-a"></div><div class="orbit-ring ring-b"></div><div class="orbit-core"><span>n</span></div><span class="orbit-spark spark-a">✦</span><span class="orbit-spark spark-b">✧</span></div>
+        <h1>Good to see you<span class="heading-comma">.</span><br><span class="gradient-heading">What’s on your mind?</span></h1>
+        <p class="welcome-subtitle">A clear space to think, create, and figure things out.</p>
+        <div class="suggestion-grid">
+          <button class="suggestion-card glass-panel" data-prompt="Explain a complex topic in a simple, easy-to-understand way."><span class="suggestion-icon">✳</span><strong>Explain something</strong><span>Make a complex topic easy to understand</span><span class="suggestion-arrow">↗</span></button>
+          <button class="suggestion-card glass-panel" data-prompt="Help me write something. Ask what I am working on first."><span class="suggestion-icon">⌘</span><strong>Help me write</strong><span>Turn a rough idea into something polished</span><span class="suggestion-arrow">↗</span></button>
+          <button class="suggestion-card glass-panel" data-prompt="Help me explore an interesting idea and think through different angles."><span class="suggestion-icon">⌁</span><strong>Explore an idea</strong><span>Think through possibilities and new angles</span><span class="suggestion-arrow">↗</span></button>
+        </div>
+      </div>
+      <div class="messages-wrap" id="messages" hidden></div>
+      <div class="error-toast" id="errorToast" hidden><span id="errorText"></span><button id="dismissError">×</button></div>
+    </div>
+    <div class="composer-dock" id="composerDock">
+      <div class="composer glass-panel"><textarea id="promptInput" rows="1" placeholder="Ask Nemo anything…" aria-label="Message Nemo"></textarea>
+        <div class="composer-footer">
+          <div class="composer-controls">
+            <div class="model-picker-wrap composer-model-wrap">
+              <button class="model-picker composer-model-picker" id="modelPicker" aria-haspopup="true" aria-expanded="false"><span class="model-picker-mark">✳</span><span id="modelName">Nemo 3</span><span class="model-chevron">⌄</span></button>
+              <div class="model-menu composer-model-menu glass-panel" id="modelMenu" hidden><div class="model-menu-heading">Choose a model</div><div id="modelOptions"></div></div>
+            </div>
+            <span class="composer-hint">✧ Thoughtful answers</span>
+          </div>
+          <div class="composer-controls"><span class="enter-hint">↵ to send</span><button class="send-button" id="sendButton" disabled aria-label="Send message"><span id="sendIcon">↑</span></button></div>
+        </div>
+      </div><div class="disclaimer">Nemo can make mistakes. Check important information.</div>
+    </div>
+    <button class="scroll-bottom" id="scrollBottom" aria-label="Scroll to bottom">↓</button>
+  </section>
+</main>
+<script src="app.js"></script>
+</body></html>
